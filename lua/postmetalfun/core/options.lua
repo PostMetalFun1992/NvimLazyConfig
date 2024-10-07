@@ -1,6 +1,7 @@
 local opt = vim.opt
 
 vim.cmd("let g:netrw_liststyle = 3") -- change file explorer style
+vim.opt.laststatus = 3 -- global statusline
 
 -- opt.relativenumber = true
 opt.number = true
