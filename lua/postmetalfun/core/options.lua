@@ -34,3 +34,7 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+-- enable local configs
+vim.o.exrc = true
+vim.o.secure = true
