@@ -17,6 +17,10 @@ return {
           i = {
             ["<C-k>"] = actions.move_selection_previous, -- move to prev result
             ["<C-j>"] = actions.move_selection_next, -- move to next result
+            ["<CR>"] = actions.select_tab,
+          },
+          n = {
+            ["<CR>"] = actions.select_tab,
           },
         },
       },
