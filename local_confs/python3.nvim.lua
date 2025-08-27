@@ -2,12 +2,21 @@ local env_path = vim.fn.getcwd() .. "/.venv"
 
 vim.g.python3_host_prog = env_path .. "/bin/python3"
 
--- Install pynvim + python-lsp-server
+-- Install pynvim + python-lsp-server + ruff
+-- vim.lsp.enable('pylsp')
+-- vim.lsp.enable('ruff')
+
+-- Configure ruff LSP with explicit path
+require('lspconfig').ruff.setup({
+  cmd = { env_path .. "/bin/ruff", "server" },
+})
+
+-- Configure pylsp
 require('lspconfig').pylsp.setup({
   cmd = { env_path .. "/bin/pylsp" },
 })
 
--- Install ruff
+-- Install
 require("conform").setup({
   formatters = {
     ruff = {
@@ -23,3 +32,4 @@ require("conform").setup({
     timeout_ms = 1000,
   },
 })
+
