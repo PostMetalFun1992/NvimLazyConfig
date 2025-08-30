@@ -12,7 +12,12 @@ return {
 
     telescope.setup({
       defaults = {
-        path_display = { "smart" },
+        layout_strategy = "vertical",
+        layout_config = { vertical = { mirror = true, } },
+
+        path_display = { "truncate" },
+        sorting_strategy = "ascending",
+
         mappings = {
           i = {
             ["<C-k>"] = actions.move_selection_previous, -- move to prev result
